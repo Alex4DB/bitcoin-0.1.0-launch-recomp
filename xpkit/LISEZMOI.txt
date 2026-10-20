@@ -1,0 +1,47 @@
+Kit de test Bitcoin 0.1.0 reconstruit - Windows XP SP3
+=====================================================
+
+But : rejouer le crash de Hal Finney (10/01/2009) sur un vrai Windows XP SP3 et lire la
+pile au moment du crash, pour savoir d'ou vient l'adresse 942316 que son debogueur a affichee.
+
+Contenu
+  bitcoin.exe      notre 0.1.0 reconstruite (-O3, sans symboles comme l'originale)
+  libeay32.dll, mingwm10.dll   les DLL livrees avec la 0.1.0 (identiques a l'originale)
+  fakeircd.exe     faux serveur IRC local (127.0.0.1:6667), source : fakeircd.c
+  1-setup.bat      a lancer UNE fois en administrateur
+  2-run.bat        un essai
+  3-collect.bat    rassemble les resultats dans results\run_N
+  EXPECTED.txt     les adresses attendues dans cette build
+
+Precautions
+  - VM isolee : carte reseau en "host-only" (ou reseau interne). Bitcoin 0.1.0 essaie de
+    contacter 72.233.89.199 (ancien whatismyip.com) et 1.2.3.4:8333 ; inutile que ca sorte.
+  - Ne pas lancer sur une machine reelle.
+  - Prendre un instantane (snapshot) de la VM avant 1-setup.bat : le script modifie le
+    fichier hosts et installe Dr. Watson comme debogueur par defaut.
+
+Deroule
+  1. Copier tout le dossier dans la VM, par exemple C:\btc010\
+  2. Clic droit > Executer en tant que... administrateur (ou session admin) : 1-setup.bat
+  3. 2-run.bat, puis DOUBLE-CLIQUER bitcoin.exe dans la fenetre de l'Explorateur
+     (Hal : double-clic = crash ; lance depuis cygwin = pas de crash).
+     Si Windows demande d'autoriser bitcoin.exe dans le pare-feu, accepter.
+  4. Attendre le crash (10 a 40 s ; GetMyExternalIP peut prendre ~20 s en reseau isole).
+     La fenetre de Bitcoin disparait. Fermer la fenetre fakeircd.
+  5. 3-collect.bat, puis compresser results\run_N et me l'envoyer.
+  6. Refaire 2-run.bat + double-clic + 3-collect.bat 2 ou 3 fois : le contenu residuel de
+     la pile peut varier d'un essai a l'autre.
+
+Option (si disponible dans la VM)
+  - Visual Studio (6.0 ou 2005) installe : c'est le debogueur qu'utilisait Hal. Au lieu de
+    Dr. Watson, accepter "Debug" au crash et recopier la fenetre Call Stack (ou une capture
+    d'ecran), plus la fenetre Memory a l'adresse ESP.
+  - WinDbg (Debugging Tools for Windows 6.x) : "windbg -I" pour l'installer comme debogueur
+    post-mortem, puis au crash taper :  r   puis  kb   puis  dds esp L40
+    et recopier la sortie.
+
+Si bitcoin.exe ne plante pas
+  - Verifier dans debug.log les lignes "GOT WHO: [u4HUtbXQT3ySNk]  new" puis
+    "GOT JOIN: [u4HUtbXQT3ySNk]". Si elles n'y sont pas, l'IRC factice n'a pas ete joint
+    (fichier hosts, pare-feu).
+  - Le crash depend de la memoire voisine (comme chez Hal) : refaire un essai.

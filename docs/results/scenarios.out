@@ -1,0 +1,62 @@
+## run010s.sh scenario runs (fakeircd2.pl). hal1 = Hal's session 1 replay; own = own JOIN only; quiet = no JOIN/WHO; keep=1 = addr.dat kept from the previous run
+env0 scen=hal1 keep=0 pad=0: read access to 80000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+env100 scen=hal1 keep=0 pad=100: read access to 80000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+env300 scen=hal1 keep=0 pad=300: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+env700 scen=hal1 keep=0 pad=700: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+env1500 scen=hal1 keep=0 pad=1500: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+env3000 scen=hal1 keep=0 pad=3000: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+env6000 scen=hal1 keep=0 pad=6000: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+env12000 scen=hal1 keep=0 pad=12000: read access to 78000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx20 scen=hal1 keep=0 pad=20: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx40 scen=hal1 keep=0 pad=40: read access to 7C0767C4 at address 0097A898; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx60 scen=hal1 keep=0 pad=60: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx80 scen=hal1 keep=0 pad=80: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx140 scen=hal1 keep=0 pad=140: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx180 scen=hal1 keep=0 pad=180: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx220 scen=hal1 keep=0 pad=220: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx260 scen=hal1 keep=0 pad=260: read access to 80000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx400 scen=hal1 keep=0 pad=400: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx500 scen=hal1 keep=0 pad=500: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx600 scen=hal1 keep=0 pad=600: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx800 scen=hal1 keep=0 pad=800: read access to 78000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx900 scen=hal1 keep=0 pad=900: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx1000 scen=hal1 keep=0 pad=1000: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx1200 scen=hal1 keep=0 pad=1200: read access to 90000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx1700 scen=hal1 keep=0 pad=1700: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx2000 scen=hal1 keep=0 pad=2000: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx2500 scen=hal1 keep=0 pad=2500: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx3500 scen=hal1 keep=0 pad=3500: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx4000 scen=hal1 keep=0 pad=4000: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx4500 scen=hal1 keep=0 pad=4500: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx5000 scen=hal1 keep=0 pad=5000: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx7000 scen=hal1 keep=0 pad=7000: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx8000 scen=hal1 keep=0 pad=8000: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx9000 scen=hal1 keep=0 pad=9000: read access to 70000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx10000 scen=hal1 keep=0 pad=10000: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx14000 scen=hal1 keep=0 pad=14000: read access to 90000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+envx16000 scen=hal1 keep=0 pad=16000: read access to 88000014 at address 00930547; last IRC: GOT JOIN: [u4HUtbXQT3ySNk]  
+ENVDONE
+== hal1
+wine: Unhandled page fault on read access to 7C0767C4 at address 0097A898 (thread 0130), starting debugger...
+GOT JOIN: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u4HUtbXQT3ySNk]  new  CAddress(1.2.3.4:8333)|GOT JOIN: [u4HUtbXQT3ySNk]  |
+== own2
+wine: Unhandled page fault on read access to C8000014 at address 00930547 (thread 0130), starting debugger...
+CAddress(1.2.3.4:8333)|GOT JOIN: [u88qSoM5z3FYruu]  |
+== X1empty
+exit=124
+X1: count at thread start|X1: count returned|
+== X1loaded
+exit=124
+X1: count at thread start|X1: count returned|
+== X4hal1
+exit=124
+GOT JOIN: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u4HUtbXQT3ySNk]  new  CAddress(1.2.3.4:8333)|GOT JOIN: [u4HUtbXQT3ySNk]  CAddress(1.2.3.4:8333)|
+== X4loaded
+wine: Unhandled page fault on read access to 00000001 at address 0097A98B (thread 0130), starting debugger...
+CAddress(1.2.3.4:8333)|GOT JOIN: [u88qSoM5z3FYruu]  |
+== X1fill
+wine: Unhandled page fault on read access to 88000014 at address 009306B7 (thread 0130), starting debugger...
+X1: count at thread start|X1: count returned|GOT JOIN: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u4HUtbXQT3ySNk]  new  CAddress(1.2.3.4:8333)|GOT JOIN: [u4HUtbXQT3ySNk]  |
+== X1loaded2
+wine: Unhandled page fault on read access to C8000014 at address 009306B7 (thread 0130), starting debugger...
+CAddress(1.2.3.4:8333)|X1: count at thread start|
