@@ -28,7 +28,8 @@ at $WINDRES_TIME wine cmd /c "cd /d C:\\rec && mingw32-make obj/ui_res.o" < /dev
 wine cmd /c "cd /d C:\\rec && mingw32-make" < /dev/null >> $O/make.log 2>&1 || { tail -5 $O/make.log; exit 1; }
 cd $R; cp bitcoin.exe $O/bitcoin-unstripped.exe; cp bitcoin.map $O/
 at $STRIP_TIME wine strip bitcoin.exe < /dev/null; cp bitcoin.exe $O/bitcoin.exe
-# Pack like the release (build-rar.sh), with launch-day times: every file 07/01 01:00
+# Pack like the release (build-rar.sh), with launch-day times: every file 07/01 01:00.
+# The packaged makefile is the shipped one (-O0, SHA at -O3): only the build above used -O3.
 # (version 0.1.0 = minute 00), folders obj/rc as in the 0.1.1 archive, src = assumption.
 P=$c/rrec; rm -rf $P; mkdir -p $P/bin $P/files
 unar -q -D -o $P/bin /downloads/wrar351.exe Rar.exe

@@ -13,7 +13,8 @@
 - **Known launch-day differences**, all present here:
   - the `mapAddresses.count` block that Satoshi quoted to Hal Finney as removed in 0.1.1 (`reconstruction/irc.cpp`);
   - `VERSION = 100`, visible in Hal's debug.log;
-  - an optimized build (`-O3`): 0.1.1 "turns off optimization".
+  - an optimized build: 0.1.1 "turns off optimization". The exe is compiled with `-O3` **throughout**. Building like the packaged makefile (everything `-O0`, only `sha.cpp` at `-O3`) lands ~300 KB away from Hal's addresses and calls `count` out of line, unlike Hal's stack.
+  - The **packaged** makefile stays the shipped one (`-O0`, dated 07/01 01:00). In the 0.1.1 archive it still carries the 0.1.0 time while the files edited for 0.1.1 were re-dated, so the launch package most likely contained it unchanged. Details in `reconstruction/CHANGES.md`.
 - **Root cause of Hal's crash.** An unclosed `#pragma pack(1)` in `irc.cpp` makes gcc compile a packed copy of `map::find` for `mapAddresses`. It is the only copy, so the linker keeps it, and it reads the tree root at the wrong offset. An empty map is harmless; a populated one crashes.
 - **Satoshi's workaround** ("call count once in the main thread") worked through the linker's choice of copy, not through threads: a never-called function is enough. It was only a partial fix. See `docs/crash-mechanism.md`.
 - **Hal's three addresses** ("The exception was at address 00930AF7. The displayed call stack was 942316 called by 508936."):
