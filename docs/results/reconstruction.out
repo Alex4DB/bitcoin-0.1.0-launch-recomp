@@ -1,0 +1,30 @@
+## genfit.py candidates (evalglob.py)
+f_20_20_10 ret=0x508936 (Hal    +0) find=0x9307b0 (Hal  +800) D-excess= +800 mod16=6  <== mod 6
+f_20_20_40 ret=0x508936 (Hal    +0) find=0x930970 (Hal  +352) D-excess= +352 mod16=6  <== mod 6
+f_20_20_70 ret=0x508936 (Hal    +0) find=0x930ad0 (Hal    +0) D-excess=   +0 mod16=6  <== mod 6
+f_20_20_72 ret=0x508936 (Hal    +0) find=0x930af0 (Hal   -32) D-excess=  -32 mod16=6  <== mod 6
+f_20_20_74 ret=0x508936 (Hal    +0) find=0x930b00 (Hal   -48) D-excess=  -48 mod16=6  <== mod 6
+
+## full build (build010rec.sh) and fitted link (link010fit.sh)
+v010_fit       ret=0x508936 (Hal 0x508936, d=+0)  callee=0x930ad0  find=0x00930ad0 (Hal crash 0x930af7, d=+39)
+v010_rec       ret=0x508936 (Hal 0x508936, d=+0)  callee=0x930ad0  find=0x00930ad0 (Hal crash 0x930af7, d=+39)
+== fit_hal1: wine: Unhandled page fault on read access to 70000014 at address 00930AF7 (thread 0130), starting debugger...
+GOT JOIN: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u4HUtbXQT3ySNk]  new  CAddress(1.2.3.4:8333)|GOT JOIN: [u4HUtbXQT3ySNk]  |
+== fit_own: wine: Unhandled page fault on read access to C8000014 at address 00930AF7 (thread 0130), starting debugger...
+GOT JOIN: [u88qSoM5z3FYruu]  |
+== recs_hal1: wine: Unhandled page fault on read access to 80000014 at address 00930AF7 (thread 0130), starting debugger...
+GOT JOIN: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u88qSoM5z3FYruu]  CAddress(127.0.0.1:8333)|GOT WHO: [u4HUtbXQT3ySNk]  new  CAddress(1.2.3.4:8333)|GOT JOIN: [u4HUtbXQT3ySNk]  |
+== slot S-36 (run010b.sh on v010_fit)
+0x00508694 00942316
+0x005088e1 0531d510
+0x0050891d 0531d510
+0x00508931 0531d510
+ 
+2349492 bitcoin-0.1.0-reconstruction.rar
+49583090 bitcoin-unstripped.exe
+6512128 bitcoin.exe
+7453939 bitcoin.map
+3763 make.log
+dfbbabe33b8ee759057b687d69ac9e6449c48ac27a8303549a5350d75cff1e1a  bitcoin.exe
+7b5cb4f5e98d8ee19ca82646b4a862b970402a54bdb13ac01d7713ad4f16e9a7  bitcoin-unstripped.exe
+2f86033081a4342870f58095375b84ee9fbeb28dbca3ab1d7d34055a5a0bd19e  bitcoin-0.1.0-reconstruction.rar

@@ -1,0 +1,20 @@
+Kit v2: COMPATIBLE RECONSTRUCTION of the launch-day Bitcoin 0.1.0 (not the original:
+about 1.4 KB of unknown code is replaced by size-equivalent placeholders that never run;
+see README.md in the repository).
+
+Hal Finney, 10/01/2009 19:13 UTC, XP SP3, original 0.1.0 (no symbols):
+  "The exception was at address 00930AF7. The displayed call stack was 942316 called by 508936."
+
+Predicted on XP SP3 with THIS exe (kit fake IRC server: WHO line with the new 1.2.3.4, then its re-JOIN):
+  exception (EIP)          00930AF7   _Rb_tree<vector<uchar>,pair<..,CAddress>>::find + 0x27
+                                      (root read at the packed offset; faulting address 0xXX000014,
+                                      XX = low byte of the root node's heap address)
+  stale word ESP+0x0C      00942316   std::string(const char*) right after its call to
+                                      _S_construct, left by DecodeAddress's argument; XP's
+                                      EnterCriticalSection does not overwrite it (Wine's does)
+  real return              00508936   ThreadIRCSeed, at ESP+0x2C (saved EBP at ESP+0x28)
+
+If Dr. Watson or a debugger shows "942316 called by 508936" (or the raw stack shows
+00942316 at ESP+0x0C and 00508936 at ESP+0x2C), the mechanism is confirmed on XP.
+If the root's low byte happens to be 00, or 0xXX000014 is mapped, the crash moves or does
+not happen; run 2-run.bat again (the heap layout varies between runs).
